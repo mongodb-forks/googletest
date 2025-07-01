@@ -116,21 +116,7 @@ cc_library(
     defines = select({
         ":has_absl": ["GTEST_HAS_ABSL=1"],
         "//conditions:default": [],
-    }) + [
-        "GTEST_DONT_DEFINE_ASSERT_EQ=1",
-        "GTEST_DONT_DEFINE_ASSERT_FALSE=1",
-        "GTEST_DONT_DEFINE_ASSERT_GE=1",
-        "GTEST_DONT_DEFINE_ASSERT_GT=1",
-        "GTEST_DONT_DEFINE_ASSERT_LE=1",
-        "GTEST_DONT_DEFINE_ASSERT_LT=1",
-        "GTEST_DONT_DEFINE_ASSERT_NE=1",
-        "GTEST_DONT_DEFINE_ASSERT_TRUE=1",
-        "GTEST_DONT_DEFINE_ASSERT_XY=1",
-        "GTEST_DONT_DEFINE_FAIL=1",
-        "GTEST_DONT_DEFINE_SUCCEED=1",
-        "GTEST_DONT_DEFINE_TEST=1",
-        "GTEST_DONT_DEFINE_TEST_F=1",
-    ],
+    }),
     features = select({
         ":windows": ["windows_export_all_symbols"],
         "//conditions:default": [],
