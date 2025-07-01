@@ -30,6 +30,8 @@
 #
 #   Bazel Build for Google C++ Testing Framework(Google Test)
 
+load("//bazel:mongo_src_rules.bzl", "mongo_cc_library")
+
 package(default_visibility = ["//visibility:public"])
 
 licenses(["notice"])
@@ -87,7 +89,7 @@ cc_library(
 # For an actual test, use `gtest` and also `gtest_main` if you depend on gtest's
 # main(). For a library, use `gtest_for_library` instead if the library can be
 # testonly.
-cc_library(
+mongo_cc_library(
     name = "gtest",
     srcs = glob(
         include = [
